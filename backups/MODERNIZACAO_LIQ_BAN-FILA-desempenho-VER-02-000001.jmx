@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Baixa Operacional" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="HOST" elementType="Argument">
+            <stringProp name="Argument.name">HOST</stringProp>
+            <stringProp name="Argument.value">ibmspdes.caixa</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PORTA" elementType="Argument">
+            <stringProp name="Argument.name">PORTA</stringProp>
+            <stringProp name="Argument.value">1420</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CANAL" elementType="Argument">
+            <stringProp name="Argument.name">CANAL</stringProp>
+            <stringProp name="Argument.value">SIBAR.SVRCONN</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="GERENCIADOR" elementType="Argument">
+            <stringProp name="Argument.name">GERENCIADOR</stringProp>
+            <stringProp name="Argument.value">QSDA</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="USER" elementType="Argument">
+            <stringProp name="Argument.name">USER</stringProp>
+            <stringProp name="Argument.value">SSPLBD01</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="abrir-conexao" elementType="Argument">
+            <stringProp name="Argument.name">abrir-conexao</stringProp>
+            <stringProp name="Argument.value">false</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="fechar-conexao" elementType="Argument">
+            <stringProp name="Argument.name">fechar-conexao</stringProp>
+            <stringProp name="Argument.value">false</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">C:/Users/Public/apache-jmeter-5.3/bin/codigos_barras_nosso_numero.csv</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">CODIGO_BARRAS,NOSSO_NUMERO</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variaveis de configuracao" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="SISTEMA_QUE_SERA_TESTADO" elementType="Argument">
+            <stringProp name="Argument.name">SISTEMA_QUE_SERA_TESTADO</stringProp>
+            <stringProp name="Argument.value">SIGCB</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="-" elementType="Argument">
+            <stringProp name="Argument.name">-</stringProp>
+            <stringProp name="Argument.value">-</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NOME_FILA" elementType="Argument">
+            <stringProp name="Argument.name">NOME_FILA</stringProp>
+            <stringProp name="Argument.value">SIBAR.REQ.MANUTENCAO_COBRANCA_BANCARIA</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="MSG" elementType="Argument">
+            <stringProp name="Argument.name">MSG</stringProp>
+            <stringProp name="Argument.value">&lt;ns13:SERVICO_ENTRADA xmlns:ns20=&quot;http://caixa.gov.br/sibar/consulta_habitacao/boleto&quot; xmlns:ns21=&quot;http://caixa.gov.br/sibar/consulta_habitacao/contrato&quot; xmlns:ns10=&quot;http://caixa.gov.br/ippo/manutencao&quot; xmlns:ns22=&quot;http://caixa.gov.br/sibar/consulta_habitacao/informeirpf&quot; xmlns:ns11=&quot;http://caixa.gov.br/sibar/controle_pagamentos&quot; xmlns:ns23=&quot;http://caixa.gov.br/sibar/consulta_habitacao/liquidacao&quot; xmlns:ns12=&quot;http://caixa.gov.br/sibar/consulta_cobranca_bancaria/pagamento&quot; xmlns:ns24=&quot;http://caixa.gov.br/sibar/consulta_habitacao/pagamentos&quot; xmlns:ns13=&quot;http://caixa.gov.br/sibar/manutencao_cobranca_bancaria/pagamento&quot; xmlns:ns25=&quot;http://caixa.gov.br/sibar/manutencao_sms&quot; xmlns:ns14=&quot;http://caixa.gov.br/sibar/manutencao_conta&quot; xmlns:ns15=&quot;http://caixa.gov.br/sibar/manutencao_cliente&quot; xmlns:ns16=&quot;http://caixa.gov.br/sibar/manutencao_conta_caixa_facil&quot; xmlns:ns17=&quot;http://caixa.gov.br/sibar/manutencao_cartao_debito&quot; xmlns:ns18=&quot;http://caixa.gov.br/siico/consulta_corporativa/conslocalidadeporcep/icopo9lb&quot; xmlns:ns19=&quot;http://caixa.gov.br/sibar/consulta_habitacao/amortizacao&quot; xmlns:ns2=&quot;http://caixa.gov.br/sibar&quot; xmlns:ns3=&quot;http://caixa.gov.br/sibar/controle_correspondente&quot; xmlns:ns4=&quot;http://caixa.gov.br/sibar/valida_cartao&quot; xmlns:ns5=&quot;http://caixa.gov.br/sibar/autenticacao_biometrica&quot; xmlns:ns6=&quot;http://caixa.gov.br/sibar/valida_senha&quot; xmlns:ns7=&quot;http://caixa.gov.br/silce/validacodigoresgate&quot; xmlns:ns8=&quot;http://caixa.gov.br/sibar/consulta_conta_sid09&quot; xmlns:ns9=&quot;http://caixa.gov.br/sibar/sms_consulta_servicos&quot;&gt; &lt;ns2:HEADER&gt; &lt;VERSAO&gt;2.0&lt;/VERSAO&gt; &lt;USUARIO_SERVICO&gt;SGCBS01D&lt;/USUARIO_SERVICO&gt; &lt;OPERACAO&gt;BAIXA_OPERACIONAL&lt;/OPERACAO&gt; &lt;SISTEMA_ORIGEM&gt;SISPL&lt;/SISTEMA_ORIGEM&gt; &lt;DATA_HORA&gt;20210202091020&lt;/DATA_HORA&gt; &lt;/ns2:HEADER&gt; &lt;DADOS&gt; &lt;BAIXA_OPERACIONAL&gt; &lt;BENEFICIARIO&gt;1100219&lt;/BENEFICIARIO&gt; &lt;NOSSO_NUMERO&gt;14000000009990244&lt;/NOSSO_NUMERO&gt; &lt;TIPO&gt;BAIXA_INTEGRAL&lt;/TIPO&gt; &lt;DATA_HORA_PROCESSAMENTO&gt;2021-02-02T09:10:20.771&lt;/DATA_HORA_PROCESSAMENTO&gt; &lt;DATA_PROCESSAMENTO&gt;2021-02-02&lt;/DATA_PROCESSAMENTO&gt; &lt;VALOR&gt;1.00&lt;/VALOR&gt; &lt;CODIGO_BARRAS&gt;10495845200000001001100219000100040099902443&lt;/CODIGO_BARRAS&gt; &lt;UNIDADE_RECEBEDORA&gt;363&lt;/UNIDADE_RECEBEDORA&gt; &lt;CANAL_PAGAMENTO&gt;CORRESPONDENTE&lt;/CANAL_PAGAMENTO&gt; &lt;MEIO_PAGAMENTO&gt;ESPECIE&lt;/MEIO_PAGAMENTO&gt; &lt;FLAG_OPERACAO_CONTINGENCIA&gt;N&lt;/FLAG_OPERACAO_CONTINGENCIA&gt; &lt;DATA_MOVIMENTO&gt;2021-02-02&lt;/DATA_MOVIMENTO&gt; &lt;NSU_ORIGEM&gt;588459605&lt;/NSU_ORIGEM&gt; &lt;FLAG_CONTINGENCIA_CAIXA&gt;N&lt;/FLAG_CONTINGENCIA_CAIXA&gt; &lt;/BAIXA_OPERACIONAL&gt; &lt;/DADOS&gt; &lt;/ns13:SERVICO_ENTRADA&gt;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="-" elementType="Argument">
+            <stringProp name="Argument.name">-</stringProp>
+            <stringProp name="Argument.value">-</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NOME_FILA_RSP" elementType="Argument">
+            <stringProp name="Argument.name">NOME_FILA_RSP</stringProp>
+            <stringProp name="Argument.value">SIBAR.RSP.MANUTENCAO_COBRANCA_BANCARIA</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Abrir-conexao" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+          <stringProp name="IfController.condition">&quot;${abrir-conexao}&quot; == &quot;false&quot;</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Realiza-conexao" enabled="true">
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import com.ibm.msg.client.jms.JmsConnectionFactory
+import com.ibm.msg.client.jms.JmsFactoryFactory
+import com.ibm.msg.client.wmq.WMQConstants
+
+import javax.jms.Session
+
+def hostName = &quot;${HOST}&quot;
+def hostPort = &quot;${PORTA}&quot;
+def queueManagerName = &quot;${GERENCIADOR}&quot;
+def channelName = &quot;${CANAL}&quot;
+def system = &quot;${SISTEMA_QUE_SERA_TESTADO}&quot;
+def usuario = &quot;${USER}&quot;
+def queueName
+def mensagem
+
+
+queueName = &quot;${NOME_FILA}&quot;
+queueName_rsp = &quot;${NOME_FILA_RSP}&quot;
+
+mensagem = &apos;${MSG}&apos;
+
+def ff = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER)
+def cf = ff.createConnectionFactory()
+
+cf.setStringProperty(WMQConstants.WMQ_HOST_NAME, hostName)
+cf.setStringProperty(WMQConstants.WMQ_PORT, hostPort)
+cf.setStringProperty(WMQConstants.WMQ_CHANNEL, channelName)
+cf.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE, WMQConstants.WMQ_CM_CLIENT)
+cf.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, queueManagerName)
+cf.setStringProperty(WMQConstants.USERID, usuario)
+cf.setIntProperty(WMQConstants.JMS_IBM_CHARACTER_SET, 37) //EBCDIC
+
+
+def conn = cf.createConnection()
+def sess = conn.createSession(false, Session.AUTO_ACKNOWLEDGE)
+
+def destination = sess.createQueue(queueName)
+def destination2 = sess.createQueue(queueName_rsp)
+
+conn.start()
+
+log.info(&quot;Iniciado&quot;)
+
+System.getProperties().put(&quot;Session&quot;, sess)
+System.getProperties().put(&quot;Connection&quot;, conn)
+System.getProperties().put(&quot;Destination&quot;, destination)
+System.getProperties().put(&quot;Destination2&quot;, destination2)
+System.getProperties().put(&quot;Mensagem&quot;, mensagem)
+
+// 7
+vars.put(&quot;abrir-conexao&quot;, &quot;true&quot;)</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Realiza Baixa Operacional" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Liquida boleto" enabled="true">
+          <stringProp name="cacheKey">false</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import java.time.Instant
+
+def sess = System.getProperties().get(&quot;Session&quot;)
+def destination = System.getProperties().get(&quot;Destination&quot;)
+def mensagem = System.getProperties().get(&quot;Mensagem&quot;)
+
+def producer = sess.createProducer(destination)
+
+def rnd = new Random(System.currentTimeMillis())
+
+//def payload = String.format(mensagem)
+def payload = mensagem.replaceAll(&quot;10495845200000001001100219000100040099902443&quot;,vars.get(&quot;CODIGO_BARRAS&quot;)).replaceAll(&quot;14000000009990244&quot;,vars.get(&quot;NOSSO_NUMERO&quot;))
+def payload_ebcdic = new String(payload.getBytes(&apos;IBM500&apos;))
+def stored = new String(payload_ebcdic.getBytes(&apos;IBM500&apos;), &quot;ISO-8859-1&quot;) //Ebcdic bytes stored 
+        
+def msg = sess.createTextMessage(payload)
+
+def start = Instant.now()
+
+producer.send(msg)
+
+def stop = Instant.now()
+
+producer.close()
+
+SampleResult.setResponseData(msg.getText())
+SampleResult.setDataType( org.apache.jmeter.samplers.SampleResult.TEXT )
+SampleResult.setLatency( stop.toEpochMilli() - start.toEpochMilli() )
+</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Retorno da Fila" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Retorno da fila" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import javax.jms.TextMessage
+import javax.jms.BytesMessage
+
+import java.time.LocalDate
+import java.time.LocalTime
+import java.time.Instant
+import java.time.format.DateTimeFormatter
+
+def sess = System.getProperties().get(&quot;Session&quot;)
+def destination2 = System.getProperties().get(&quot;Destination2&quot;)
+
+def consumer = sess.createConsumer(destination2)
+
+def start = Instant.now()
+
+def msg = consumer.receive()
+
+def stop = Instant.now()
+
+if (msg != null) {
+
+	if (msg instanceof BytesMessage) {
+		def tmp = msg.asType(BytesMessage)
+		log.debug(&quot;#### Incoming BytesMessage contains &quot; + tmp.getBodyLength() + &quot; bytes&quot;)
+	} else if (msg instanceof TextMessage) {
+		def tmp = msg.asType(TextMessage)
+		log.debug(&quot;#### Incoming TextMessage contains -&gt; &quot; + tmp.getText())
+	} else
+		log.debug(&quot;#### Incoming message has unexpected format!&quot;)
+
+	LocalDate date = LocalDate.parse(msg.getStringProperty(&quot;JMS_IBM_PutDate&quot;),
+					DateTimeFormatter.ofPattern(&quot;uuuuMMdd&quot;))
+	LocalTime time = LocalTime.parse(msg.getStringProperty(&quot;JMS_IBM_PutTime&quot;),
+					DateTimeFormatter.ofPattern(&quot;HHmmssSS&quot;))
+
+            def timestampDetail = String.format(&quot;#### Incoming message was placed in queue @ %s - %s&quot;, date, time)
+	log.info(timestampDetail)
+
+     //SampleResult.setResponseData(msg.toString() + &quot;\n\n&quot; + timestampDetail)
+	SampleResult.setResponseData(msg.getText())
+	SampleResult.setDataType( org.apache.jmeter.samplers.SampleResult.TEXT )
+	SampleResult.setLatency( stop.toEpochMilli() - start.toEpochMilli() )
+
+} else {
+	log.info(&quot;#### Nothing to fetch!&quot;)
+}
+
+// 9
+consumer.close()</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="Fecha-conexao" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </PostThreadGroup>
+      <hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+          <stringProp name="IfController.condition">&quot;${fechar-conexao}&quot; == &quot;false&quot;</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Fecha-conexao" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">System.getProperties().get(&quot;Session&quot;).close()
+System.getProperties().get(&quot;Connection&quot;).close()
+
+log.info(&quot;Teste finalizado&quot;)
+
+vars.put(&quot;fechar-conexao&quot;, &quot;true&quot;)</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <longProp name="interval_grouping">1000</longProp>
+        <boolProp name="graph_aggregated">false</boolProp>
+        <stringProp name="include_sample_labels"></stringProp>
+        <stringProp name="exclude_sample_labels"></stringProp>
+        <stringProp name="start_offset"></stringProp>
+        <stringProp name="end_offset"></stringProp>
+        <boolProp name="include_checkbox_state">false</boolProp>
+        <boolProp name="exclude_checkbox_state">false</boolProp>
+      </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

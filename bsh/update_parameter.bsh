@@ -1,0 +1,1 @@
+setprop("hits", args[0]);
